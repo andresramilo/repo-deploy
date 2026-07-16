@@ -1,0 +1,19 @@
+name: Deploy fake
+on:
+  workflow_call:
+    inputs:
+      ambiente:
+        type: string
+        default: "desenvolvimento"
+        required: true
+        description: "Ambiente onde será feito o deploy"
+    # secrets:
+    #   segredo:
+    #     required: true
+    #     description: "Kubeconfig para acesso ao cluster Kubernetes"
+jobs:
+  deploy-kubernetes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy no ambiente
+        run: echo "Executando o deploy no ambiente de ${{ inputs.ambiente }} com o segredo ${{ secrets.SEGREDO }}"
