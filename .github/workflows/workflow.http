@@ -1,0 +1,11 @@
+POST https://api.github.com/repos/andresramilo/repo-deploy/dispatches
+Accept: application/vnd.github+json
+Authorization: token 
+Content-Type: application/json
+
+{
+  "event_type": "deploy-remoto",
+  "client_payload": {
+    "ambiente": "Vitas toda linda!"
+  }
+}
